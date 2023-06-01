@@ -16,10 +16,11 @@ class ExamenModel
                         ,examen.Rijbewijscategorie
                         ,examen.Rijschool
                         ,examen.Stad
-                        ,examen.Uitslag 
+                        ,examen.Uitslag
         FROM examenperexaminator
         INNER JOIN examen ON examen.Id = examenperexaminator.ExamenId
-        INNER JOIN examinator on examinator.Id = examenperexaminator.ExaminatorId;";
+        INNER JOIN examinator on examinator.Id = examenperexaminator.ExaminatorId
+        ORDER BY Naam";
 
         $this->db->query($sql);
 
